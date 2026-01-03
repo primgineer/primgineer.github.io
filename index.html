@@ -7,7 +7,6 @@
     <script src="https://cdn.jsdelivr.net/npm/omggif@1.0.10/omggif.min.js"></script>
 	<script src="js/lib.js" defer></script>
 	<link rel="stylesheet" href="css/styles.css">
-
 </head>
 <body>
 	<p><strong><a href="shape/">Shape Merger Tool</a></strong></p>
@@ -45,6 +44,10 @@
                     <option value="#0000ff">Blue</option>
                 </select>
             </div>
+            <div class="control-group">
+                <label>FPS</label>
+                <input type="number" id="fps" value="30" min="1" max="120" step="1">
+            </div>
         </div>
 
         <div class="checkbox-group">
@@ -68,9 +71,14 @@
             <img id="resultImage" alt="Sprite sheet">
             <br>
             <button class="download-btn" id="downloadBtn">Download PNG</button>
+            <button class="copy-btn" id="copyScriptBtn">Copy Script to Clipboard</button>
+            
+            <div class="script-output">
+                <h4>LSL Animation Script:</h4>
+                <textarea id="scriptText" spellcheck="false"></textarea>
+            </div>
         </div>
     </div>
-
 
 </body>
 </html>
