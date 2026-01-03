@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIF to Sprite Sheet</title>
+    <script src="https://cdn.jsdelivr.net/npm/omggif@1.0.10/omggif.min.js"></script>
+	<script src="js/lib.js" defer></script>
+	<link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 GIF to Sprite Sheet</h1>
+        <p class="subtitle">Extract all frames from an animated GIF into a single grid image</p>
+        
+        <div class="upload-area" id="uploadArea">
+            <div class="upload-icon">📁</div>
+            <p><strong>Click to upload</strong> or drag and drop your GIF</p>
+            <input type="file" id="fileInput" accept=".gif">
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>Canvas Size (px)</label>
+                <input type="number" id="canvasSize" value="2048" min="256" max="8192" step="256">
+            </div>
+            <div class="control-group">
+                <label>Columns (auto if empty)</label>
+                <input type="number" id="columns" placeholder="Auto" min="1">
+            </div>
+            <div class="control-group">
+                <label>Skip Frames</label>
+                <input type="number" id="skipFrames" value="0" min="0">
+            </div>
+            <div class="control-group">
+                <label>Background</label>
+                <select id="background">
+                    <option value="transparent">Transparent</option>
+                    <option value="#ffffff">White</option>
+                    <option value="#000000">Black</option>
+                    <option value="#ff0000">Red</option>
+                    <option value="#00ff00">Green</option>
+                    <option value="#0000ff">Blue</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="keepAspect">
+            <label for="keepAspect">Keep aspect ratio (fill & crop mode)</label>
+        </div>
+        
+        <div class="checkbox-group">
+            <input type="checkbox" id="pixelPerfect">
+            <label for="pixelPerfect">Pixel perfect (disable smoothing for sharper result)</label>
+        </div>
+
+        <button id="generateBtn" disabled>Upload a GIF first</button>
+
+        <div id="info" class="info" style="display: none;"></div>
+        <div id="loading" class="loading" style="display: none;">Extracting frames...</div>
+        <div id="error" class="error" style="display: none;"></div>
+        
+        <div id="preview" class="preview" style="display: none;">
+            <h3>Result:</h3>
+            <img id="resultImage" alt="Sprite sheet">
+            <br>
+            <button class="download-btn" id="downloadBtn">Download PNG</button>
+        </div>
+    </div>
+
+
+</body>
+</html>
