@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Merger</title>
+	<script src="../js/shape.js" defer></script>
+	<link rel="stylesheet" href="../css/shape.css">
+</head>
+<body>
+    <div class="howto">
+        <h1>How does it work?</h1><br />
+        <span>Everything you select will be transferred from your Source file to your Destination file.</span>
+    </div>
+
+    <div class="wrapper">
+        <div class="left">
+            <div class="dropzone" id="sourceDropzone">
+                <div class="dropzone-text">
+                    <span>Drop the source file here<br>or click to select</span>
+                </div>
+            </div>
+            <div class="file-info" id="sourceInfo"></div>
+            <input type="file" id="sourceInput" class="hidden" accept=".xml,text/xml,application/xml,text/plain">
+        </div>
+
+        <div class="right">
+            <div class="dropzone" id="destDropzone">
+                <div class="dropzone-text">
+                    <span>Drop the destination file here<br>or click to select</span>
+                </div>
+            </div>
+            <div class="file-info" id="destInfo"></div>
+            <input type="file" id="destInput" class="hidden" accept=".xml,text/xml,application/xml,text/plain">
+        </div>
+    </div>
+
+    <select name="move_sliders" id="moveSliders" multiple>
+        <option value="body">body</option>
+        <option value="head">head</option>
+        <option value="eyes">eyes</option>
+        <option value="ears">ears</option>
+        <option value="nose">nose</option>
+        <option value="mouth">mouth</option>
+        <option value="chin">chin</option>
+        <option value="torso">torso</option>
+        <option value="legs">legs</option>
+    </select>
+
+    <button id="reshapeButton" disabled>Reshape</button>
+
+    <div class="status" id="status"></div>
+
+    <script>
+
+    </script>
+</body>
+</html>
